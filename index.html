@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirtuOps - VM Management App</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            max-width: 1200px; /* You can adjust this for larger screens */
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p, ul {
+            line-height: 1.6;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 22px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            p, ul {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center>
+            <h1>VirtuOps</h1>
+            <p>Group 16's Capstone Project</p>
+            <p>By: Zeerak.A | Jacob.H | Deven.V | Brant.L</p>
+        </center>
+    
+        <h2>Introduction</h2>
+        <p>VirtuOps is a Virtual Machine Management app that was made for ELEC 377, an operating system course. Before this app was implemented teams of students were designated virtual machines to undergo various lab tasks. Each year, these machines were manually created and managed by Dr. Dean and the IT team. Hypothetically, if an issue appeared, the students are not able to fix their own machines. A recent example of this occurred this term, where students would fill up their disk drive and be locked out of their machines, requiring manual intervention by the professor. To resolve such an issue and create more ease for Dr. Dean, the graduate teaching assistants, and the IT team, our team decided to implement a lightweight, singlenode VM management system that would simplify troubleshooting. VirtuOps is designed to be a system with role-based access control such that students can sign-in and manage their VM.</p>
+    
+        <h2>Software Design</h2>
+        <h3>Users</h3>
+        <p>VirtuOps's target audience is the following types of users:</p>
+        <ul>
+            <li>Undergraduate Students</li>
+            <li>Graduate Research Students</li>
+            <li>Professor</li>
+            <li>Undergraduate & Graduate Teaching Assistants</li>
+        </ul>
+    
+        <h3>Main Functionalities</h3>
+        <p>Core features include Start, Stop, Snapshot VMs. Additional features and custom capabilities catered for the Professor, Research Students, TAs, and Admins include creating, deleting, and listing VMs.</p>
+    
+        <h3>Backend</h3>
+        <p>The backend consists of:</p>
+        <ul>
+            <li>Nginx: The web server.</li>
+            <li>SQLite: The database that holds all user information.</li>
+            <li>Django: For the authentication.</li>
+            <li>Automated scripts for all the main functionalities.</li>
+            <li>Custom OS with metadata, user information, and network configuration.</li>
+        </ul>
+    
+        <h2>Analysis</h2>
+        <p>Analyzed and conducted meetings with the professor and the IT team to review the software stack, library, authentication, and general advice to ensure a more efficient solution is reached. The team graded a few design choices using a criterion table. This criterion table encourages constant inspection throughout each life cycle stage to ensure the software is easily accessible, safe, and efficient.</p>
+    
+        <h2>Challenges</h2>
+        <ul>
+            <li>Scalability: Ensuring the system can efficiently handle an increasing number of users and VM instances without any performance degradation.</li>
+            <li>Security: Prioritizing safety to ensure no unauthorized access or SQL injection occurs, and to maintain data integrity by respecting data privacy for all users' virtual machines.</li>
+            <li>User Usability: Ensuring the software is user-friendly and accommodates users with varying levels of technical expertise.</li>
+            <li>Resource Allocation: Managing the physical resources (CPU, memory, storage) of the host system to prevent overcommitment and ensure optimal performance for all VMs.</li>
+            <li>Fault Tolerance and Recovery: Implementing robust mechanisms to recover from hardware or software failures with minimal disruption to users.</li>
+            <li>Network Configuration and Performance: Ensuring reliable and efficient network connectivity for VMs, including handling virtual network configurations and potential bottlenecks.</li>
+            <li>Integration with Existing Infrastructure: Seamlessly integrating with the existing IT infrastructure, including authentication systems, storage solutions, and network setups.</li>
+        </ul>
+    
+        <h2>Recommendations</h2>
+        <ul>
+            <li>Prioritizing User Experience: The interface is intuitive and easily accessible.</li>
+            <li>Emphasis on Security: To implement strong authentication and encryption to protect user data and VMs.</li>
+            <li>Test Thoroughly: Constant testing should be conducted, which also includes stress tests, to spot and fix issues early.</li>
+            <li>User Feedback: Regularly gather feedback to improve the software and add new features.</li>
+        </ul>
+    
+        <h2>Next Steps</h2>
+        <ul>
+            <li>Enhance Security Protocols: Continuously update and strengthen security measures to address emerging threats and vulnerabilities.</li>
+            <li>Cloud Integration: Integrate cloud services to increase scalability.</li>
+            <li>Feedback Feature: Implementing a feedback feature that enables the user to provide feedback on their likes and dislikes of the app.</li>
+        </ul>
+    </div>
+</body>
+</html>
